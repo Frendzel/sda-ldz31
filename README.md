@@ -1,2 +1,283 @@
-# Workshops plan
-Spring workshops
+# Spring Workshops plan
+## Workshops 1 - 09.01.2021 - [Intro]
+## Workshops 2 - 22.01.2021 - [Beginner]
+## Workshops 3 - 23.01.2021 - [Advanced]
+## Workshops 4 - 29.01.2021 - [Advanced]
+## Workshops 5 - 30.01.2021 - [Group work]
+## Workshops 6 - 05.02.2021 - [Group work]
+
+# Modules
+
+* BASIC WEBAPP
+* SPRING BOOT AOP
+* SPRING BOOT BATCH
+* SPRING BOOT CACHE
+* SPRING BOOT THYMELEAF
+* SPRING BOOT JDBC-TEMPLATE
+* SPRING BOOT JMS
+* SPRING BOOT JPA
+* SPRING BOOT MONGODB
+* SPRING BOOT REST
+* SPRING BOOT SCHEDULER
+* SPRING BOOT TRANSACTIONS
+* SPRING BOOT VALIDATOR
+
+# TO COVER:
+* Spring basics
+* Spring core
+* Spring MVC (JSP/Thymeleaf)
+* Spring Boot
+* Spring Data
+* Spring Security
+* Webservices
+* Angular/React integration [optional]
+
+# Intro
+
+## Let's start!
+1. Generate Sample Spring Project
+2. Import to IDE
+3. Try to build & Try to run
+4. Check exposed method via browser
+5. Try to expose actuator
+6. Validate healthcheck
+7. Add CommandLineRunner
+8. Try to print all beans
+9. Change log level for some packages
+10. Define log level for our package
+11. Write simple junit test
+12. Expose Greeting controller method + write test, for example mockMvc
+13. Define DAO layer with 2 database types (H2, HARDCODED) chosoen via factory
+14. Pass usage of dedicated db via property file
+15. Add dependency like lombok + define loggers
+16. Add scheduler for simple logging
+17. Chcuk Norris Jokes! Log them in scheduler from website
+18. Add serialization/deserialization
+19. Add proper layers implementation
+
+## 3 layers app
+# Sample controllers
+# Sample DB with repo for H2
+
+## Generate sample Spring Boot App
+## Chuck Norris Jokes collector
+## Rest API for this
+### @Cacheable
+### @Async
+### Validations
+## 3 layers app
+### Transactions
+## Mapstruct to use mapping between DAO and DTO
+## @Scheduler
+## Save jokes on MongoDB App using MongoClient
+### make json from object
+## Turn On H2, use JDBC repository to save data to the sql DB
+### using ActiveMQ
+## tests, tests, tests!
+### unit
+### integration
+### mockMvc
+### cucumber *** -> extra
+## @Aspect to calculate invocation time
+## Write extra tools to export data to the PDF, CSV, EXCEL formats
+## Use testcontainers to avoid SQL database *** -> extra
+
+# Tasks
+
+`Task 1 - REST-SERVICE`
+
+Rest Controller with get method exposed on /greeting address + parameter support
+
+deps:
+* spring-boot-starter-web
+* spring-boot-starter-test
+* com.jayway.jsonpath
+
+`Task 2 - SPRING BOOT`
+
+Hello Controller + prompting in console all beans definition
+
+deps:
+* spring-boot-starter-web
+* spring-boot-starter-actuator
+* spring-boot-starter-test
+* spring-test
+
+`Task 3 - JDBC-TEMPLATE`
+
+use JDBCTemplate to:
+* drop table if exists
+* create tables 
+* use select
+* batch insert sample
+* map data between object and db
+
+deps:
+* spring-boot-starter-jdbc
+
+`Task 4 - JPA`
+
+Save entity via repository / spring data by manager in dao layer
+
+deps:
+* spring-boot-starter-data-jpa
+* spring-data
+* com.h2database
+
+`Task 5 - SCHEDULER`
+
+Scheduler + cron expressions
+
+deps:
+spring-context
+
+`Task 6 - TRANSACTIONS`
+
+Simple app + @Transactional usage
+
+deps:
+* com.h2database
+
+`Task 7 - ASYNC`
+
+Async methods + restTemplate usage
+
+deps:
+* spring-web
+
+`Task 8 - BATCH`
+
+Based on:
+http://malsolo.com/blog4java/?p=260
+
+we will write app which will import data from csv and save them in db using jobs
+
+Usage:
+* JdbcBatchItemWriter
+* ItemProcessor
+* FlatFileItemReader
+* jdbcTemplate
+* JobExecutionListenerSupport
+
+deps:
+* spring-boot-starter-batch
+
+`Task 9 - CACHE`
+
+Simple task to add @Cacheable mechanism
+
+deps:
+* spring-boot-starter-cache
+
+`Task 10 - VALIDATOR`
+
+Write simple validator extending class WebMvcConfigurerAdapter + integration tests + annotations javax.validation.constraints
+
+deps:
+* spring-boot-starter-thymeleaf
+* hibernate-validator 
+
+`Task 11 - MongoDB`
+Connector to MongoDB
+
+`Task 12 - JMS`
+
+Refactor architecture to use JMS
+
+deps:
+* spring-boot-starter-activemq
+* activemq-broker
+* jackson-databind
+
+`Task 13 - FILE-UPLOADER`
+
+File Uploader which will:
+* download file choosen via form
+* list downloaded files
+* doanload file sent by user
+* delete choosen files
+
+deps:
+* spring-boot-starter-thymeleaf
+
+
+# Theory
+
+## Why do we even need Spring -> https://www.youtube.com/watch?v=ySXlsZDJMgc
+## Docs: https://docs.spring.io/spring-boot/docs/current/reference/html/index.html
+## IoC
+## Dependency Injections
+## Annotations vs Xml
+## Configuration
+## ApplicationContext
+## Beans
+## Component etc.
+## Autowired
+## Polimorphism in Spring
+
+# More Theory
+
+## DDD
+## TDD
+## BDD
+## Tests categories
+
+# Implementation
+## Generate sample Spring Boot App
+## Chuck Norris Jokes collector
+## Rest API for this
+### @Cacheable
+### @Async
+### Validations
+## 3 layers app
+### Transactions
+## Mapstruct to use mapping between DAO and DTO
+## @Scheduler
+## Save jokes on MongoDB App using MongoClient
+### make json from object
+## Turn On H2, use JDBC repository to save data to the sql DB
+### using ActiveMQ
+## tests, tests, tests!
+### unit
+### integration
+### mockMvc
+### cucumber *** -> extra
+## @Aspect to calculate invocation time
+## Write extra tools to export data to the PDF, CSV, EXCEL formats
+## Use testcontainers to avoid SQL database *** -> extra
+### DataFaker to generate many fake data for reports: https://jworks.io/datafaker-an-alternative-to-production-data/
+
+# Architecture
+## 3 layers
+## hexagonal -> https://www.baeldung.com/hexagonal-architecture-ddd-spring
+## how to test architecture -> https://www.archunit.org/
+## Add JMS usage to architecture (Producer, Consumer)
+## Different implementations (queue vs topic) and usage for consumed messages: save to DB, save to PDF, save to excel, send via mail.
+
+# Alternatives:
+## Picocontainer
+## Micronaut
+## Dagger2 
+
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Web Starter](https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-developing-web-applications)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+
+# Group work ideas:
+
+## Spring Mail
+### Jokes rank app. 
+### Sending mails with jokes.
+### Exporting data to dedicated format (PDF, EXCEL, CSV)
+### Implementing frontend (thymeleaf can be used)
