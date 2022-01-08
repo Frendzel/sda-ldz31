@@ -1,2 +1,2 @@
-# sda-ldz31
+# Workshops plan
 Spring workshops
