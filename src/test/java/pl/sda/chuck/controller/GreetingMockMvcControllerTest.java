@@ -21,7 +21,7 @@ class GreetingMockMvcControllerTest {
     MockMvc mockMvc;
 
     @Test
-    @DisplayName("/hello method validation from GreetingController - positive")
+    @DisplayName("/hello method verification from GreetingController - positive")
     void hello() throws Exception {
         //when
         String response = mockMvc
@@ -34,14 +34,14 @@ class GreetingMockMvcControllerTest {
     }
 
     @Test
-    @DisplayName("/hello/json method validation from GreetingController - positive")
+    @DisplayName("/hello/json method verification from GreetingController - positive")
     void helloJson() throws Exception {
         //when
         String response = mockMvc
-                .perform(MockMvcRequestBuilders.get("/hello/json"))
-                .andExpect(MockMvcResultMatchers.status().is2xxSuccessful())
-                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
-                .andReturn()
+                .perform(MockMvcRequestBuilders.get("/hello/json")) //run http method over application
+                .andExpect(MockMvcResultMatchers.status().is2xxSuccessful()) //check http status on response
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON)) //check content type on response
+                .andReturn() //return mvc result to validate response
                 .getResponse()
                 .getContentAsString();
         //then
