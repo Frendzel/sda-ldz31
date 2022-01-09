@@ -45,7 +45,7 @@
 8. Try to print all beans ✔️
 9. Change log level for some packages  ✔
 10. Define log level for our package  ✔
-11. Write simple junit test
+11. Write simple junit test  ✔
 12. Expose Greeting controller method + write test, for example mockMvc
 13. Define DAO layer with 2 database types (H2, HARDCODED) chosoen via factory
 14. Pass usage of dedicated db via property file
