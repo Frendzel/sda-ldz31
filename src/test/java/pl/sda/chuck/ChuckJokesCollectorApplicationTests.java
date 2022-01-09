@@ -1,5 +1,6 @@
 package pl.sda.chuck;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,12 @@ class ChuckJokesCollectorApplicationTests {
     @Test
     @DisplayName("Spring context verification test - positive")
     void contextLoadsTest() {
-        //given
+        //given [optional]
 
         //when
-
+        String status = a.getStatus();
         //then
-
+        Assertions.assertEquals("ACTIVE", status);
     }
 
 }

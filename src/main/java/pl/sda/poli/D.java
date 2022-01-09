@@ -10,6 +10,7 @@ public class D extends B{
         this.status = "active";
     }
 
+    @Override
     public String getStatus() {
         return status;
     }

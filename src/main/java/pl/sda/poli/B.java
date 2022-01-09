@@ -11,6 +11,7 @@ public class B implements C {
         this.status = "active";
     }
 
+    @Override
     public String getStatus() {
         return status;
     }
