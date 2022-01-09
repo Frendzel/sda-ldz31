@@ -1,4 +1,4 @@
-package pl.sda.chuck.poli;
+package pl.sda.poli;
 
 public interface C {
 

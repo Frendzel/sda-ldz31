@@ -35,16 +35,16 @@
 # Intro
 
 ## Let's start!
-1. Generate Sample Spring Project
-2. Import to IDE
-3. Try to build & Try to run
-4. Check exposed method via browser
-5. Try to expose actuator
-6. Validate healthcheck
-7. Add CommandLineRunner
-8. Try to print all beans
-9. Change log level for some packages
-10. Define log level for our package
+1. Generate Sample Spring Project ✔️
+2. Import to IDE ✔️
+3. Try to build & Try to run ✔️
+4. Check exposed method via browser ✔️
+5. Try to expose actuator ✔️
+6. Validate healthcheck ❌
+7. Add CommandLineRunner ✔️
+8. Try to print all beans ✔️
+9. Change log level for some packages  ✔
+10. Define log level for our package  ✔
 11. Write simple junit test
 12. Expose Greeting controller method + write test, for example mockMvc
 13. Define DAO layer with 2 database types (H2, HARDCODED) chosoen via factory
@@ -54,6 +54,8 @@
 17. Chcuk Norris Jokes! Log them in scheduler from website
 18. Add serialization/deserialization
 19. Add proper layers implementation
+20. Change properties file to yml file
+21. Different ways of autowiring beans
 
 ## 3 layers app
 # Sample controllers
