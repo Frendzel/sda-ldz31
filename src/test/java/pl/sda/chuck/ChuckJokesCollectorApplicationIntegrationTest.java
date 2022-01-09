@@ -9,7 +9,7 @@ import pl.sda.poli.C;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class ChuckJokesCollectorApplicationTests {
+class ChuckJokesCollectorApplicationIntegrationTest {
 
     @Autowired
     C a;
