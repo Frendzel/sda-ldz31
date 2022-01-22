@@ -1,17 +1,20 @@
 package pl.sda.chuck.dto;
 
 import com.google.gson.Gson;
-import org.junit.jupiter.api.Assertions;
+import com.google.gson.GsonBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.util.StringUtils;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class JokeTest {
 
     private static final String SUCCESS = "SUCCESS";
+    public static final String EMPTY_STRING = "";
 
     //given
     Gson gson = new Gson();
@@ -31,6 +34,15 @@ class JokeTest {
 
         //when
         String result = gson.toJson(joke);
+        //show joke serialized in standard way
+        System.out.println(result);
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        //show joke serialized in pretty way
+        String prettyResult = gsonBuilder
+                .setPrettyPrinting()
+                .create()
+                .toJson(joke);
+        System.out.println(prettyResult);
 
         //then
         assertTrue(result.contains("\"type\":\"SUCCESS\""));
@@ -43,11 +55,11 @@ class JokeTest {
 
         //given
         String jsonFirst = "{\n" +
-                "\t\"type\": SUCCESS,\n" +
-                "\t\"value\": {\n" +
-                "\t\t\"id\": 145,\n" +
-                "\t\t\"joke\": \"Chuck Norris is currently suing myspace for taking the name of what he calls everything around you.\",\n" +
-                "\t\t\"categories\": []\n" +
+                "\t\"type\":\"SUCCESS\",\n" +
+                "\t\"value\":{\n" +
+                "\t\t\"id\":145,\n" +
+                "\t\t\"joke\":\"Chuck Norris is currently suing myspace for taking the name of what he calls everything around you.\",\n" +
+                "\t\t\"categories\":[]\n" +
                 "\t}\n" +
                 "}";
 
@@ -55,16 +67,14 @@ class JokeTest {
         Joke jokeDto = gson.fromJson(jsonFirst, Joke.class);
 
         //then
-        Assertions.assertEquals(jokeDto.type, SUCCESS);
-        Assertions.assertEquals(jokeDto.value.id, 145);
+        assertEquals(jokeDto.type, SUCCESS);
+        assertEquals(jokeDto.value.id, 145);
         //etc
 
         //when
-        //gson --> json
-
+        String result = gson.toJson(jokeDto);
         //then
-        //compare json final with json first
-
+        assertEquals(StringUtils.replaceIsoControlCharacters(jsonFirst, EMPTY_STRING), result);
 
     }
 
