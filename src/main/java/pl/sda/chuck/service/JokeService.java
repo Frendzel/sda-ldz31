@@ -30,4 +30,19 @@ public class JokeService {
         log.warn("Exception has not been propagated!");
         return Optional.empty();
     }
+
+    public Optional<Joke> getJoke(Integer id) {
+        try {
+            ResponseEntity<Joke> response = restTemplate.getForEntity("http://api.icndb.com/jokes/{id}", Joke.class, id);
+            //log trace response
+            log.trace("Response: {}", response);
+            return Optional.of(response)
+                    .map(HttpEntity::getBody);
+        } catch (Exception e) {
+            log.error("Unknown exception: {}", e.getMessage());
+            //TODO handle exceptions properly (propagate exception + catch in GlobalExceptionHandler)
+        }
+        log.warn("Exception has not been propagated!");
+        return Optional.empty();
+    }
 }
