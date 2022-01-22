@@ -6,6 +6,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
 
 import java.util.Optional;
@@ -34,6 +35,21 @@ public class JokeService {
     public Optional<Joke> getJoke(Integer id) {
         try {
             ResponseEntity<Joke> response = restTemplate.getForEntity("http://api.icndb.com/jokes/{id}", Joke.class, id);
+            //log trace response
+            log.trace("Response: {}", response);
+            return Optional.of(response)
+                    .map(HttpEntity::getBody);
+        } catch (Exception e) {
+            log.error("Unknown exception: {}", e.getMessage());
+            //TODO handle exceptions properly (propagate exception + catch in GlobalExceptionHandler)
+        }
+        log.warn("Exception has not been propagated!");
+        return Optional.empty();
+    }
+
+    public Optional<CountResponse> countJokes() {
+        try {
+            ResponseEntity<CountResponse> response = restTemplate.getForEntity("http://api.icndb.com/jokes/count", CountResponse.class);
             //log trace response
             log.trace("Response: {}", response);
             return Optional.of(response)

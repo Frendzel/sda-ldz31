@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.exception.ExternalTechnicalException;
 import pl.sda.chuck.service.JokeService;
@@ -26,5 +27,11 @@ public class JokeController {
     public Joke getJoke(@PathVariable Integer id) {
         log.info("Get joke with id: {}", id);
         return jokeService.getJoke(id).orElseThrow(() -> new ExternalTechnicalException("oh nein!"));
+    }
+
+
+    @GetMapping("/jokes/count")
+    public CountResponse getJokesCount() {
+        return jokeService.countJokes().orElseThrow(() -> new ExternalTechnicalException("oh nein!"));
     }
 }
