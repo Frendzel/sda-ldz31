@@ -14,8 +14,7 @@ import java.util.Optional;
 @Slf4j //Will generate code private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(JokeService.class)
 public class JokeService {
 
-    @Autowired
-    RestTemplate restTemplate;
+    RestTemplate restTemplate = new RestTemplate();
 
     public Optional<Joke> getRandomJoke() {
         try {
