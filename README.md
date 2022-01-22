@@ -1,6 +1,6 @@
 # Spring Workshops plan
-## Workshops 1 - 09.01.2021 - [Intro]
-## Workshops 2 - 22.01.2021 - [Beginner]
+## Workshops 1 - 09.01.2021 - [Intro]  ✔
+## Workshops 2 - 22.01.2021 - [Beginner]  ✔
 ## Workshops 3 - 23.01.2021 - [Advanced]
 ## Workshops 4 - 29.01.2021 - [Advanced]
 ## Workshops 5 - 30.01.2021 - [Group work]
@@ -46,24 +46,29 @@
 9. Change log level for some packages  ✔
 10. Define log level for our package  ✔
 11. Write simple junit test  ✔
-12. Expose Greeting controller method + write test, for example mockMvc
-13. Define DAO layer with 2 database types (H2, HARDCODED) chosoen via factory
+12. Expose Greeting controller method + write test, for example mockMvc  ✔
+13. Define DAO layer with 2 database types (H2, HARDCODED) chosen via factory
 14. Pass usage of dedicated db via property file
-15. Add dependency like lombok + define loggers
+15. Add dependency like lombok + define loggers  ✔
 16. Add scheduler for simple logging
 17. Chcuk Norris Jokes! Log them in scheduler from website
 18. Add serialization/deserialization
-19. Add proper layers implementation
-20. Change properties file to yml file
-21. Different ways of autowiring beans ✔
-22. Sample DB usage (List of Jokes?)
-23. Service Layer (RestTemplate, maybe HttpClient)
-24. Chuck Norris Jokes Collector controller implementation
-    1. GET
-    2. POST
-    3. PUT
-    4. DELETE
-25. Load json data from file and use in test to compare values
+19. Implement Mapstruct mapping between dao & dto
+20. Add proper layers implementation
+21. Change properties file to yml file
+22. Different ways of autowiring beans ✔
+23. Sample DB usage (List of Jokes?)
+24. Service Layer (RestTemplate, maybe HttpClient)  ✔
+25. Tests for service layer  ✔
+26. Chuck Norris Jokes Collector controller implementation
+    1. Usage of: http://api.icndb.com API 
+    2. REST GET
+    3. REST POST
+    4. REST PUT
+    5. REST DELETE
+27. Load json data from file and use in test to compare values
+28. Save data to file in service
+29. Hexagonal architecture proposal for application (separated module)
 
 ## 3 layers app
 # Sample controllers ✔
@@ -181,7 +186,7 @@ deps:
 
 `Task 10 - VALIDATOR`
 
-Write simple validator extending class WebMvcConfigurerAdapter + integration tests + annotations javax.validation.constraints
+Write simple validator extending class WebMvcConfigureAdapter + integration tests + annotations javax.validation.constraints
 
 deps:
 * spring-boot-starter-thymeleaf
@@ -202,10 +207,10 @@ deps:
 `Task 13 - FILE-UPLOADER`
 
 File Uploader which will:
-* download file choosen via form
+* download file chosen via form
 * list downloaded files
-* doanload file sent by user
-* delete choosen files
+* download file sent by user
+* delete chosen files
 
 deps:
 * spring-boot-starter-thymeleaf
@@ -223,7 +228,7 @@ deps:
 ## Beans
 ## Component etc.
 ## Autowired
-## Polimorphism in Spring
+## Polymorphism in Spring
 
 # More Theory
 
