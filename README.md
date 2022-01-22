@@ -63,6 +63,7 @@
     2. POST
     3. PUT
     4. DELETE
+25. Load json data from file and use in test to compare values
 
 ## 3 layers app
 # Sample controllers ✔
