@@ -24,5 +24,6 @@ public class JokeController {
                 "}";
 
         return gson.fromJson(jsonFirst, Joke.class);
+        //TODO invoke service layer and return random joke
     }
 }
