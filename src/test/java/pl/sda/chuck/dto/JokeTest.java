@@ -33,7 +33,7 @@ class JokeTest {
         String result = gson.toJson(joke);
 
         //then
-        assertTrue(result.contains("\"type\":SUCCESS"));
+        assertTrue(result.contains("\"type\":\"SUCCESS\""));
         assertTrue(result.contains("\"value\":{\"id\":1,\"joke\":\"Very funny joke\",\"categories\":[\"nerdy\"]}"));
     }
 
