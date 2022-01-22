@@ -69,6 +69,7 @@
 27. Load json data from file and use in test to compare values
 28. Save data to file in service
 29. Hexagonal architecture proposal for application (separated module)
+30. Validation request (POST)
 
 ## 3 layers app
 # Sample controllers ✔

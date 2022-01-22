@@ -2,9 +2,7 @@ package pl.sda.chuck.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.exception.ExternalTechnicalException;
@@ -23,15 +21,19 @@ public class JokeController {
         //TODO implement proper error handling and diff exceptions
     }
 
+    @GetMapping("/jokes/count")
+    public CountResponse getJokesCount() {
+        return jokeService.countJokes().orElseThrow(() -> new ExternalTechnicalException("oh nein!"));
+    }
+
     @GetMapping("/joke/{id}")
     public Joke getJoke(@PathVariable Integer id) {
         log.info("Get joke with id: {}", id);
         return jokeService.getJoke(id).orElseThrow(() -> new ExternalTechnicalException("oh nein!"));
     }
 
-
-    @GetMapping("/jokes/count")
-    public CountResponse getJokesCount() {
-        return jokeService.countJokes().orElseThrow(() -> new ExternalTechnicalException("oh nein!"));
+    @PostMapping("/joke/add")
+    public void saveJoke(@RequestBody Joke joke) {
+        log.info("Joke to be saved: {}", joke);
     }
 }
