@@ -55,10 +55,17 @@
 18. Add serialization/deserialization
 19. Add proper layers implementation
 20. Change properties file to yml file
-21. Different ways of autowiring beans
+21. Different ways of autowiring beans ✔
+22. Sample DB usage (List of Jokes?)
+23. Service Layer (RestTemplate, maybe HttpClient)
+24. Chuck Norris Jokes Collector controller implementation
+    1. GET
+    2. POST
+    3. PUT
+    4. DELETE
 
 ## 3 layers app
-# Sample controllers
+# Sample controllers ✔
 # Sample DB with repo for H2
 
 ## Generate sample Spring Boot App
