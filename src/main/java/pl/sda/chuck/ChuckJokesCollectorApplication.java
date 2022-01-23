@@ -9,12 +9,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import pl.sda.poli.A;
 import pl.sda.poli.C;
 
 @SpringBootApplication
 @Slf4j
 @ComponentScan("pl.sda")
+@EnableScheduling
 public class ChuckJokesCollectorApplication implements CommandLineRunner {
 
     @Autowired

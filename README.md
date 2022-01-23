@@ -78,9 +78,9 @@
    1. Define different configurations for repos ✔
 3. Basic tests
 4. H2 DB schema via sql file
-5. Connect with Service
-6. Connect withDedicatedController
-7. Pass custom properties via @Value annotation
+5. Connect with Service ✔
+6. Connect withDedicatedController  ✔
+7. Pass custom properties via @Value annotation  ✔
 8. Mapstruct usage
 9. Manual mapper  ✔
 10. Implement Scheduler
