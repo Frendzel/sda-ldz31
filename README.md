@@ -86,9 +86,10 @@
 10. Implement Scheduler
     1. save random jokes to DB
 11. Aspects
-    1. LogExecutionTimeAspect
-    2. LogBefore some method
-    3. Our own annotation
+    1. 
+    2. LogExecutionTimeAspect
+    3. LogBefore some method
+    4. Our own annotation
 
 ---------------------
 
