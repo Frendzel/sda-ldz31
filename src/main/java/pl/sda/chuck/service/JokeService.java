@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
+import pl.sda.chuck.mapper.JokeManualMapper;
 import pl.sda.chuck.repository.JokesRepository;
 
 import java.net.http.HttpClient;
 import java.util.Optional;
+
+import static pl.sda.chuck.mapper.JokeManualMapper.map;
 
 @Service
 @Slf4j //Will generate code private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(JokeService.class)
@@ -71,6 +74,6 @@ public class JokeService {
     public void save(Joke joke) {
         //Mapping between DTO and DAO
         //Invoke save method on repository
-        repository.save(null); //TODO
+        repository.save(map(joke));
     }
 }

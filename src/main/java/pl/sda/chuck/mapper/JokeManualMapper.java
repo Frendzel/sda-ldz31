@@ -13,7 +13,7 @@ public class JokeManualMapper {
         JokeEntity jokeEntity = new JokeEntity();
         jokeEntity.setJoke(joke.getValue().getJoke());
         jokeEntity.setCategories(joke.getValue().getCategories());
-        jokeEntity.setExternalId(jokeEntity.getId());
+        jokeEntity.setExternalId(joke.getValue().getId());
         //TODO ID has not been set, should be automatically generated
         return jokeEntity;
     }
