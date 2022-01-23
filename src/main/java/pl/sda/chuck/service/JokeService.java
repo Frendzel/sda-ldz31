@@ -6,6 +6,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import pl.sda.chuck.aspect.LogMe;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.repository.JokesRepository;
@@ -69,6 +70,7 @@ public class JokeService {
         return Optional.empty();
     }
 
+    @LogMe
     public void save(Joke joke) {
         //Mapping between DTO and DAO
         //Invoke save method on repository
