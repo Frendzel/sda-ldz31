@@ -1,9 +1,11 @@
 package pl.sda.chuck.repository;
 
 
+import lombok.extern.slf4j.Slf4j;
 import pl.sda.chuck.dao.JokeEntity;
 import pl.sda.chuck.dao.JokesMockedDb;
 
+@Slf4j
 public class JokesMockedRepository implements JokesRepository {
 
     private JokesMockedDb jokesMockedDb;
@@ -13,6 +15,8 @@ public class JokesMockedRepository implements JokesRepository {
     }
 
     public void save(JokeEntity joke) {
+        log.debug("Before saving joke: {}", joke); //The same as log.debug("Before saving joke: " + joke);
         jokesMockedDb.getJokes().add(joke);
+        log.debug("After saving joke: {}", joke);
     }
 }

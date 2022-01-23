@@ -70,7 +70,8 @@
 28. Save data to file in service
 29. Hexagonal architecture proposal for application (separated module)
 30. Validation request (POST)
-
+31. Deployment to Cloud:
+    1. https://www.heroku.com/
 --------------------- 23.01
 1. Repository ✔
 2. Profiles on repository (Mock DB + H2) ✔
