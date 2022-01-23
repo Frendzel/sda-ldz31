@@ -6,6 +6,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import pl.sda.chuck.aspect.CalculateInvocationTime;
 import pl.sda.chuck.aspect.LogMe;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
@@ -71,6 +72,7 @@ public class JokeService {
     }
 
     @LogMe
+    @CalculateInvocationTime
     public void save(Joke joke) {
         //Mapping between DTO and DAO
         //Invoke save method on repository
