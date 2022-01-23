@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
-import pl.sda.chuck.mapper.JokeManualMapper;
 import pl.sda.chuck.repository.JokesRepository;
 
-import java.net.http.HttpClient;
 import java.util.Optional;
 
 import static pl.sda.chuck.mapper.JokeManualMapper.map;

@@ -9,7 +9,7 @@ import pl.sda.chuck.repository.JokesRepository;
 
 import javax.annotation.PostConstruct;
 
-@Configuration
+@Configuration // will be loaded as first
 @Profile("mocked-db")
 @Slf4j
 public class JokesMockedDbConfiguration {

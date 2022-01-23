@@ -3,6 +3,8 @@ package pl.sda.chuck.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.sda.chuck.dao.BaseResponse;
+import pl.sda.chuck.dao.RESPONSE_STATUS;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.exception.ExternalTechnicalException;
@@ -33,8 +35,9 @@ public class JokeController {
     }
 
     @PostMapping("/joke/add")
-    public void saveJoke(@RequestBody Joke joke) {
+    public BaseResponse saveJoke(@RequestBody Joke joke) {
         log.info("Joke to be saved: {}", joke);
         jokeService.save(joke);
+        return new BaseResponse(RESPONSE_STATUS.SUCCESS);
     }
 }
