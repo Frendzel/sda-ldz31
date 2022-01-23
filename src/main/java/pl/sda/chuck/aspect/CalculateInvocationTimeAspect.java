@@ -20,9 +20,10 @@ public class CalculateInvocationTimeAspect {
 
     @Around("@annotation(pl.sda.chuck.aspect.CalculateInvocationTime)")
     public Object calculate(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        //start stoper
-        //stop stoper
-        //log diff
-        return proceedingJoinPoint.proceed();
+        long start = System.currentTimeMillis();
+        Object proceed = proceedingJoinPoint.proceed();
+        long stop = System.currentTimeMillis();
+        log.info("Method invocation time: {}", stop - start);
+        return proceed;
     }
 }

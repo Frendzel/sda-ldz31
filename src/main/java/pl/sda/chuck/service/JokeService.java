@@ -2,6 +2,8 @@ package pl.sda.chuck.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -26,6 +28,7 @@ public class JokeService {
     @Autowired
     private JokesRepository repository;
 
+    @CalculateInvocationTime
     public Optional<Joke> getRandomJoke() {
         try {
             ResponseEntity<Joke> response = restTemplate.getForEntity("http://api.icndb.com/jokes/random", Joke.class);
