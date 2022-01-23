@@ -1,13 +1,16 @@
 package pl.sda.chuck.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
+import pl.sda.chuck.repository.JokesRepository;
 
+import java.net.http.HttpClient;
 import java.util.Optional;
 
 @Service
@@ -15,7 +18,10 @@ import java.util.Optional;
 //TODO JokeService refactor -> 3 methods to one
 public class JokeService {
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate = new RestTemplate(); //TOOO HttpClient
+
+    @Autowired
+    private JokesRepository repository;
 
     public Optional<Joke> getRandomJoke() {
         try {
@@ -60,5 +66,11 @@ public class JokeService {
         }
         log.warn("Exception has not been propagated!");
         return Optional.empty();
+    }
+
+    public void save(Joke joke) {
+        //Mapping between DTO and DAO
+        //Invoke save method on repository
+        repository.save(null); //TODO
     }
 }
