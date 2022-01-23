@@ -72,16 +72,22 @@
 30. Validation request (POST)
 
 --------------------- 23.01
-1. Repository
-2. Profiles on repository (Mock DB + H2)
-   1. Define different configurations for repos
+1. Repository ✔
+2. Profiles on repository (Mock DB + H2) ✔
+   1. Define different configurations for repos ✔
 3. Basic tests
 4. H2 DB schema via sql file
 5. Connect with Service
 6. Connect withDedicatedController
 7. Pass custom properties via @Value annotation
-8. Implement Scheduler
-   1. save random jokes to DB
+8. Mapstruct usage
+9. Manual mapper  ✔
+10. Implement Scheduler
+    1. save random jokes to DB
+11. Aspects
+    1. LogExecutionTimeAspect
+    2. LogBefore some method
+    3. Our own annotation
 
 ---------------------
 
