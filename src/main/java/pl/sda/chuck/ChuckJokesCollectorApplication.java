@@ -37,14 +37,14 @@ public class ChuckJokesCollectorApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("Hello, run with args: {}", args);
-        log.info("Before context beans definition");
-        Arrays.stream(context.getBeanDefinitionNames()).forEach(s -> log.info("Name: {}", s));
-        a.printMyName();
-        b.printMyName();
-        log.trace("Before method on c object invocation");
-        c.printMyName();
-        log.trace("After method on c object invocation");
+//        log.info("Hello, run with args: {}", args);
+//        log.info("Before context beans definition");
+//        Arrays.stream(context.getBeanDefinitionNames()).forEach(s -> log.info("Name: {}", s));
+//        a.printMyName();
+//        b.printMyName();
+//        log.trace("Before method on c object invocation");
+//        c.printMyName();
+//        log.trace("After method on c object invocation");
     }
 }
 

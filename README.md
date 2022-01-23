@@ -51,7 +51,7 @@
 14. Pass usage of dedicated db via property file
 15. Add dependency like lombok + define loggers  ✔
 16. Add scheduler for simple logging
-17. Chcuk Norris Jokes! Log them in scheduler from website
+17. Chuck Norris Jokes! Log them in scheduler from website
 18. Add serialization/deserialization
 19. Implement Mapstruct mapping between dao & dto
 20. Add proper layers implementation
@@ -70,6 +70,20 @@
 28. Save data to file in service
 29. Hexagonal architecture proposal for application (separated module)
 30. Validation request (POST)
+
+--------------------- 23.01
+1. Repository
+2. Profiles on repository (Mock DB + H2)
+   1. Define different configurations for repos
+3. Basic tests
+4. H2 DB schema via sql file
+5. Connect with Service
+6. Connect withDedicatedController
+7. Pass custom properties via @Value annotation
+8. Implement Scheduler
+   1. save random jokes to DB
+
+---------------------
 
 ## 3 layers app
 # Sample controllers ✔

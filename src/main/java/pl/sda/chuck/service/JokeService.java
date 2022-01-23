@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 @Slf4j //Will generate code private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(JokeService.class)
+//TODO JokeService refactor -> 3 methods to one
 public class JokeService {
 
     private final RestTemplate restTemplate = new RestTemplate();
