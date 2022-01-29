@@ -14,9 +14,9 @@ public class JokeMvcController {
     JokeService jokeService;
 
     @GetMapping("/view/joke")
-    public String showJoke(Model model) {
+    public String showJoke(Model model) { // UI Model which is used to process data between layers (view & controller)
         Joke joke = jokeService.getRandomJoke().orElseThrow();
-        model.addAttribute("joke", joke);
-        return "joke";
+        model.addAttribute("joke", joke); // object joke put in map on key joke
+        return "joke"; // html name, should match
     }
 }
