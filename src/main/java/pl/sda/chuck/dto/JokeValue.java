@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class JokeValue {
+public class JokeValue implements Serializable {
     Integer id;
     @NotBlank
     String joke;

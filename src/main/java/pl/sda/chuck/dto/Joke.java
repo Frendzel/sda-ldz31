@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.io.Serializable;
 
 /**
  * Sample joke below taken from: http://api.icndb.com/jokes/random
@@ -24,7 +25,7 @@ import javax.validation.Valid;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Joke {
+public class Joke implements Serializable {
     String type;
     @Valid
     JokeValue value;

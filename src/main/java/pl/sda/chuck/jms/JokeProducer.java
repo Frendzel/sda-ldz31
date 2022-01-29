@@ -16,8 +16,6 @@ public class JokeProducer {
     @Autowired
     JmsTemplate jmsTemplate;
 
-    //TODO MessageConverter
-
     @PostConstruct
     public void sendMessage() {
         jmsTemplate.convertAndSend(
@@ -29,5 +27,9 @@ public class JokeProducer {
                                 .build()).build()
         );
         log.info("Joke has been sent!");
+    }
+
+    public void produce(Joke joke) {
+        jmsTemplate.convertAndSend("messageBox", joke);
     }
 }

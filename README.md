@@ -91,7 +91,15 @@
     4. Our own annotation
 
 --------------------- 29.01
-43. review ostatnich zajęć
+1. Review last classes
+2. Validation (@Valid)
+   1. ConstraintViolation
+3. JMS Listener + Producer
+4. Thymeleaf
+   1. index.html - show jokes
+5. Mapstruct
+   1. Add to project - do mapper
+--------------------- BACKLOG
 44. Validation Request/Response 
     1. Walidacja 
     2. Valid na request body 
