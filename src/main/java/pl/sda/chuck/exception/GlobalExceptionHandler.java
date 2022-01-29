@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import pl.sda.chuck.dto.ErrorResponse;
 
+import javax.validation.ConstraintViolationException;
+
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -14,5 +16,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ExternalTechnicalException.class)
     public ResponseEntity<ErrorResponse> propagateExternalTechnicalException(ExternalTechnicalException e) {
         return new ResponseEntity<>(new ErrorResponse("Unknown joke"), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<ErrorResponse> propagateConstraintException(ConstraintViolationException e) {
+        return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }
