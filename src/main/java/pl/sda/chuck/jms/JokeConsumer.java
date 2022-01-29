@@ -9,7 +9,7 @@ import pl.sda.chuck.dto.Joke;
 @Slf4j
 public class JokeConsumer {
 
-    //H2 Repository
+    //TODO H2 Repository
 
     @JmsListener(destination = "messageBox")
     public void consume(Joke joke) {
