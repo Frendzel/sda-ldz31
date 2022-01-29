@@ -4,8 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import pl.sda.chuck.dto.Greeting;
+
+import javax.validation.Valid;
 
 @RestController
 @Slf4j
@@ -16,9 +19,11 @@ public class GreetingController {
         return "world";
     }
 
+    @Valid
+    @ResponseBody
     @GetMapping(path = "/hello/json", produces = MediaType.APPLICATION_JSON_VALUE)
     public Greeting helloJson() {
-        return new Greeting("world");
+        return new Greeting("w");
     }
 
     @Async

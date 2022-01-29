@@ -1,10 +1,10 @@
 # Spring Workshops plan
 ## Workshops 1 - 09.01.2021 - [Intro]  ✔
 ## Workshops 2 - 22.01.2021 - [Beginner]  ✔
-## Workshops 3 - 23.01.2021 - [Advanced]
-## Workshops 4 - 29.01.2021 - [Advanced]
-## Workshops 5 - 30.01.2021 - [Group work]
-## Workshops 6 - 05.02.2021 - [Group work]
+## Workshops 3 - 23.01.2021 - [Advanced]  ✔
+## Workshops 4 - 29.01.2021 - [Advanced]  ✔
+## Workshops 5 - 30.01.2021 - [Advanced]
+## Workshops 6 - 05.02.2021 - [Extra]
 
 # Modules
 
@@ -17,7 +17,7 @@
 * SPRING BOOT JMS
 * SPRING BOOT JPA
 * SPRING BOOT MONGODB
-* SPRING BOOT REST
+* SPRING BOOT R `EST
 * SPRING BOOT SCHEDULER
 * SPRING BOOT TRANSACTIONS
 * SPRING BOOT VALIDATOR
@@ -73,24 +73,55 @@
 31. Deployment to Cloud:
     1. https://www.heroku.com/
 --------------------- 23.01
-1. Repository ✔
-2. Profiles on repository (Mock DB + H2) ✔
-   1. Define different configurations for repos ✔
-3. Basic tests
-4. H2 DB schema via sql file
-5. Connect with Service ✔
-6. Connect withDedicatedController  ✔
-7. Pass custom properties via @Value annotation  ✔
-8. Mapstruct usage
-9. Manual mapper  ✔
-10. Implement Scheduler
-    1. save random jokes to DB
-11. Aspects
-    1. 
+32. Repository ✔
+33. Profiles on repository (Mock DB + H2) ✔
+    1. Define different configurations for repos ✔
+34. Basic tests  ✔
+35. H2 DB schema via sql file ❌
+36. Connect with Service ✔
+37. Connect withDedicatedController  ✔
+38. Pass custom properties via @Value annotation  ✔
+39. Mapstruct usage ❌
+40. Manual mapper  ✔
+41. Implement Scheduler ✔
+    1. save random jokes to DB  ✔
+42. Aspects  ✔
     2. LogExecutionTimeAspect
     3. LogBefore some method
     4. Our own annotation
 
+--------------------- 29.01
+43. review ostatnich zajęć
+44. Validation Request/Response 
+    1. Walidacja 
+    2. Valid na request body 
+    3. Adnotacje z javax 
+    4. Walidajce w cache module
+45. spring-boot-starter-thymeleaf 
+ConstraintVolation
+MVCController extends WebMvcConfigureAdapter
+addViewControllers(ViewControllerRegistry registry)
+dodać H2
+mapstruct dodać + maven plugin + mapowanie modeli + pokazać
+refleksja - Java - ćwiczenia
+Bonus: NoSQL - prezentacja
+ThreadPoolExecutor -> rozszerzyć wątki
+Cache + Cacheable
+SpringBootStarter-jdbc + h2
+jdbcTemplate autowirowany + execute
+SQL czysty do tabelki
+insert czysty
+query na model
+Transactional
+JMS!
+spring-boot-activemq
+activemq-broker
+@JMSListener na innym pakiecie zupełnie
+spring-boot-starter-data-jpa
+CrudRepository
+Service
+Entity
+Transactional
 ---------------------
 
 ## 3 layers app

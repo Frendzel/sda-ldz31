@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GreetingMockMvcControllerTest {
 
     @Autowired
-    MockMvc mockMvc;
+    MockMvc mockMvc; //Tests only for REST/External API layer
 
     @Test
     @DisplayName("/hello method verification from GreetingController - positive")

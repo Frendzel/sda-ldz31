@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 /**
@@ -26,6 +27,7 @@ import java.util.List;
 @Builder
 public class JokeValue {
     Integer id;
+    @NotBlank
     String joke;
     List<String> categories;
 }

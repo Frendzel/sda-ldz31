@@ -6,7 +6,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.util.StringUtils;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -18,6 +23,23 @@ class JokeTest {
 
     //given
     Gson gson = new Gson();
+
+//    @Test
+//    public void validationTest(){
+//        //given
+//        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory(); //TODO
+//        Validator validator = validatorFactory.getValidator();
+//        Joke joke = Joke.builder()
+//                .type(SUCCESS)
+//                .value(JokeValue.builder()
+//                        .joke("Very funny joke")
+//                        .id(1)
+//                        .categories(List.of("nerdy"))
+//                        .build())
+//                .build();
+//        Set<ConstraintViolation<Joke>> violations = validator.validate(joke);
+//        violations.forEach(System.out::println);
+//    }
 
     @Test
     @DisplayName("Serialization test for Joke dto to json - positive")

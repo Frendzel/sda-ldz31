@@ -2,6 +2,7 @@ package pl.sda.chuck.repository;
 
 import pl.sda.chuck.dao.JokeEntity;
 
+@FunctionalInterface
 public interface JokesRepository {
     /**
      * Generic save method for joke for all implementations (mocked,h2)

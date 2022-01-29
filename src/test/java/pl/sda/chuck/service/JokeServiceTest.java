@@ -1,7 +1,6 @@
 package pl.sda.chuck.service;
 
 import com.google.gson.Gson;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import pl.sda.chuck.exception.ExternalTechnicalException;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 
 @SpringBootTest
 class JokeServiceTest {
@@ -41,7 +41,8 @@ class JokeServiceTest {
         assertNotNull(randomJoke.map(Joke::getType).orElseThrow());
     }
 
-    @Test
+    @Test // Junit 5
+//    @Test(expected = ExternalTechnicalException.class) --> Junit 4
     @DisplayName("Should return random joke always- positive")
     void getJokeWithIdTest() {
         //given
@@ -52,6 +53,22 @@ class JokeServiceTest {
         //then
         assertEquals(gson.fromJson(jokeToBeCompared, Joke.class), joke.orElseThrow(() -> new ExternalTechnicalException("nope")));
 //        Assertions.assertThrows(ExternalTechnicalException.class, () -> jokeService.getJoke(SUT)); // how to test exceptions
+
+//        //Below test could be used if we want to check that we won't have any exception coming from service layer.
+//        try{
+//            jokeService.getJoke(1);
+//        } catch (Exception e){
+//            fail();
+//        }
+//
+//        //Below test could be used if we want to check that we will have any exception coming from service layer.
+//        try{
+//            jokeService.getJoke(9999);
+//            fail();
+//        } catch (Exception e){
+//            //ok
+//            //assertions
+//        }
     }
 
 }
