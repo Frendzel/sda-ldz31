@@ -22,4 +22,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> propagateConstraintException(ConstraintViolationException e) {
         return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
+
+    //TODO add ExceptionHandler for Exception.class
 }

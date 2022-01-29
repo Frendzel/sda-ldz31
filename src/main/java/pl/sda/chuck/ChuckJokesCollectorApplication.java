@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.jms.annotation.EnableJms;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import pl.sda.poli.A;
@@ -21,6 +22,7 @@ import pl.sda.poli.C;
 @EnableScheduling
 @EnableAspectJAutoProxy
 @EnableAsync
+@EnableJms
 public class ChuckJokesCollectorApplication implements CommandLineRunner {
 
     @Autowired
