@@ -24,22 +24,22 @@ class JokeTest {
     //given
     Gson gson = new Gson();
 
-//    @Test
-//    public void validationTest(){
-//        //given
-//        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory(); //TODO
-//        Validator validator = validatorFactory.getValidator();
-//        Joke joke = Joke.builder()
-//                .type(SUCCESS)
-//                .value(JokeValue.builder()
-//                        .joke("Very funny joke")
-//                        .id(1)
-//                        .categories(List.of("nerdy"))
-//                        .build())
-//                .build();
-//        Set<ConstraintViolation<Joke>> violations = validator.validate(joke);
-//        violations.forEach(System.out::println);
-//    }
+    @Test
+    public void validationTest(){
+        //given
+        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory(); //TODO
+        Validator validator = validatorFactory.getValidator();
+        Joke joke = Joke.builder()
+                .type(SUCCESS)
+                .value(JokeValue.builder()
+                        .joke("Very funny joke")
+                        .id(1)
+                        .categories(List.of("nerdy"))
+                        .build())
+                .build();
+        Set<ConstraintViolation<Joke>> violations = validator.validate(joke);
+        violations.forEach(System.out::println);
+    }
 
     @Test
     @DisplayName("Serialization test for Joke dto to json - positive")

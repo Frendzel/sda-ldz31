@@ -1,19 +1,17 @@
 package pl.sda.chuck.dto;
 
-import lombok.NonNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Greeting {
 
     @NotBlank
     String value;
 
-    public Greeting() {
-    }
-
-    public Greeting(String value) {
-        this.value = value;
-    }
 }
