@@ -99,6 +99,17 @@
    1. index.html - show jokes
 5. Mapstruct
    1. Add to project - do mapper
+
+------------------- 30.01
+Add webjar bootstrap:
+```
+<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>bootstrap</artifactId>
+    <version>5.1.3</version>
+</dependency>
+```
 --------------------- BACKLOG
 44. Validation Request/Response 
     1. Walidacja 
