@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.service.JokeService;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import static java.util.stream.Collectors.toList;
 
 @Controller
 public class JokeMvcController {
@@ -37,7 +37,8 @@ public class JokeMvcController {
         //IntStream
         List<Joke> jokes = IntStream.range(0, 10)
                 .boxed()
-                .map(integer -> jokeService.getRandomJoke().orElseThrow()).toList();
+                .map(integer -> jokeService.getRandomJoke().orElseThrow())
+                .collect(toList());
 
 
         model.addAttribute("jokes", jokes);
