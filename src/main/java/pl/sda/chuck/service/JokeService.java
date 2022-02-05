@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.sda.chuck.aspect.CalculateInvocationTime;
 import pl.sda.chuck.aspect.LogMe;
+import pl.sda.chuck.dao.JokeEntity;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
+import pl.sda.chuck.mapper.JokeMapper;
 import pl.sda.chuck.repository.JokesRepository;
 
 import java.util.Optional;
@@ -80,5 +82,12 @@ public class JokeService {
         //Mapping between DTO and DAO
         //Invoke save method on repository
         repository.save(map(joke));
+    }
+
+    @LogMe
+    @CalculateInvocationTime
+    public void saveAlternativeWay(Joke joke) {
+        JokeEntity jokeEntity = JokeMapper.INSTANCE.jokeToJokeEntity(joke);
+        repository.save(jokeEntity);
     }
 }

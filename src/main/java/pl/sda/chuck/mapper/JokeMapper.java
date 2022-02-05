@@ -13,4 +13,8 @@ public interface JokeMapper {
     @Mapping(source = "joke", target = "value.joke")
     @Mapping(source = "id", target = "value.id")
     Joke jokeEntityToJoke(JokeEntity jokeEntity);
+
+    @Mapping(source = "value.joke", target = "joke")
+    @Mapping(source = "value.id", target = "id")
+    JokeEntity jokeToJokeEntity(Joke joke);
 }
