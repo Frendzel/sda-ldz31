@@ -1,10 +1,10 @@
 # Spring Workshops plan
-## Workshops 1 - 09.01.2021 - [Intro]  ✔
-## Workshops 2 - 22.01.2021 - [Beginner]  ✔
-## Workshops 3 - 23.01.2021 - [Advanced]  ✔
-## Workshops 4 - 29.01.2021 - [Advanced]  ✔
-## Workshops 5 - 30.01.2021 - [Advanced]
-## Workshops 6 - 05.02.2021 - [Extra]
+## Workshops 1 - 09.01.2022 - [Intro]  ✔
+## Workshops 2 - 22.01.2022 - [Beginner]  ✔
+## Workshops 3 - 23.01.2022 - [Advanced]  ✔
+## Workshops 4 - 29.01.2022 - [Advanced]  ✔
+## Workshops 5 - 05.02.2022 - [Advanced]  ✔
+## Workshops 6 - 06.02.2022 - [Extra]
 
 # Modules
 
@@ -97,26 +97,18 @@
 3. JMS Listener + Producer
 4. Thymeleaf
    1. index.html - show jokes
-5. Mapstruct
-   1. Add to project - do mapper
 
-------------------- 30.01
-Add webjar bootstrap:
-```
-<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
-<dependency>
-    <groupId>org.webjars</groupId>
-    <artifactId>bootstrap</artifactId>
-    <version>5.1.3</version>
-</dependency>
-```
+
+------------------- 05.02
+1. Mapstruct
+    1. Add to project - do mapper
 --------------------- BACKLOG
-44. Validation Request/Response 
-    1. Walidacja 
-    2. Valid na request body 
-    3. Adnotacje z javax 
-    4. Walidajce w cache module
-45. spring-boot-starter-thymeleaf 
+2. Validation Request/Response 
+   1. Walidacja 
+   2. Valid na request body 
+   3. Adnotacje z javax 
+   4. Walidajce w cache module
+3. spring-boot-starter-thymeleaf 
 ConstraintVolation
 MVCController extends WebMvcConfigureAdapter
 addViewControllers(ViewControllerRegistry registry)
@@ -141,6 +133,15 @@ CrudRepository
 Service
 Entity
 Transactional
+4. Add webjar bootstrap:
+```
+<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>bootstrap</artifactId>
+    <version>5.1.3</version>
+</dependency>
+```
 ---------------------
 
 ## 3 layers app
