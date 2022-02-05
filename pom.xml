@@ -92,6 +92,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
+<!--		Library to generate csv report-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+
 		<!-- TEST -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
