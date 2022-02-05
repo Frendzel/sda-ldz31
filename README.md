@@ -100,6 +100,7 @@
 
 LAST CLASSES:
 * Reminder what we did
+* CSV Generator
 * BindingResult support in forms
 * Reflection
 * SpringSecurity - how to turn on
