@@ -3,7 +3,9 @@ package pl.sda.chuck.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -22,7 +24,8 @@ import java.util.List;
  * }
  * }
  */
-@Data
+@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -31,4 +34,28 @@ public class JokeValue implements Serializable {
     @NotBlank
     String joke;
     List<String> categories;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getJoke() {
+        return joke;
+    }
+
+    public void setJoke(String joke) {
+        this.joke = joke;
+    }
+
+    public List<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
+    }
 }
