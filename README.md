@@ -4,7 +4,7 @@
 ## Workshops 3 - 23.01.2022 - [Advanced]  ✔
 ## Workshops 4 - 29.01.2022 - [Advanced]  ✔
 ## Workshops 5 - 05.02.2022 - [Advanced]  ✔
-## Workshops 6 - 06.02.2022 - [Extra]
+## Workshops 6 - 06.02.2022 - [Extra] ❌
 
 # Modules
 
@@ -47,93 +47,70 @@
 10. Define log level for our package  ✔
 11. Write simple junit test  ✔
 12. Expose Greeting controller method + write test, for example mockMvc  ✔
-13. Define DAO layer with 2 database types (H2, HARDCODED) chosen via factory
-14. Pass usage of dedicated db via property file
-15. Add dependency like lombok + define loggers  ✔
-16. Add scheduler for simple logging
-17. Chuck Norris Jokes! Log them in scheduler from website
-18. Add serialization/deserialization
-19. Implement Mapstruct mapping between dao & dto
-20. Add proper layers implementation
-21. Change properties file to yml file
+13. Define DAO layer with 2 database types (H2, HARDCODED) chosen via factory ❌
+14. Pass usage of dedicated db via property file ✔
+15. Add dependency like lombok + define loggers ✔
+16. Add scheduler for simple logging ✔
+17. Chuck Norris Jokes! Log them in scheduler from website ✔
+18. Add serialization/deserialization ✔
+19. Implement Mapstruct mapping between dao & dto ✔
+20. Add proper layers implementation ✔
+21. Change properties file to yml file ❌
 22. Different ways of autowiring beans ✔
-23. Sample DB usage (List of Jokes?)
+23. Sample DB usage (List of Jokes?) ✔
 24. Service Layer (RestTemplate, maybe HttpClient)  ✔
 25. Tests for service layer  ✔
-26. Chuck Norris Jokes Collector controller implementation
-    1. Usage of: http://api.icndb.com API 
-    2. REST GET
-    3. REST POST
-    4. REST PUT
-    5. REST DELETE
-27. Load json data from file and use in test to compare values
-28. Save data to file in service
-29. Hexagonal architecture proposal for application (separated module)
-30. Validation request (POST)
-31. Deployment to Cloud:
+26. Chuck Norris Jokes Collector controller implementation ✔
+    1. Usage of: http://api.icndb.com API ✔
+    2. REST GET ✔
+    3. REST POST ✔
+    4. REST PUT ❌
+    5. REST DELETE ❌
+27. Load json data from file and use in test to compare values ❌
+28. Save data to file in service ❌
+29. Hexagonal architecture proposal for application (separated module) ❌
+30. Validation request (POST) ✔
+31. Deployment to Cloud: ❌
     1. https://www.heroku.com/
---------------------- 23.01
 32. Repository ✔
 33. Profiles on repository (Mock DB + H2) ✔
     1. Define different configurations for repos ✔
 34. Basic tests  ✔
-35. H2 DB schema via sql file ❌
+35. H2 DB schema via sql file ✔
 36. Connect with Service ✔
 37. Connect withDedicatedController  ✔
 38. Pass custom properties via @Value annotation  ✔
-39. Mapstruct usage ❌
+39. Mapstruct usage ✔
 40. Manual mapper  ✔
 41. Implement Scheduler ✔
     1. save random jokes to DB  ✔
 42. Aspects  ✔
-    2. LogExecutionTimeAspect
-    3. LogBefore some method
-    4. Our own annotation
-
---------------------- 29.01
-1. Review last classes
-2. Validation (@Valid)
-   1. ConstraintViolation
-3. JMS Listener + Producer
-4. Thymeleaf
-   1. index.html - show jokes
-
-
-------------------- 05.02
-1. Mapstruct
+    2. LogExecutionTimeAspect  ✔
+    3. LogBefore some method  ✔
+    4. Our own annotation  ✔ 
+43. Validation (@Valid)
+44. ConstraintViolation
+45. JMS Listener + Producer
+46. Thymeleaf + Form 
+47. Mapstruct
     1. Add to project - do mapper
---------------------- BACKLOG
-2. Validation Request/Response 
-   1. Walidacja 
-   2. Valid na request body 
-   3. Adnotacje z javax 
-   4. Walidajce w cache module
-3. spring-boot-starter-thymeleaf 
-ConstraintVolation
-MVCController extends WebMvcConfigureAdapter
-addViewControllers(ViewControllerRegistry registry)
-dodać H2
-mapstruct dodać + maven plugin + mapowanie modeli + pokazać
-refleksja - Java - ćwiczenia
-Bonus: NoSQL - prezentacja
-ThreadPoolExecutor -> rozszerzyć wątki
-Cache + Cacheable
-SpringBootStarter-jdbc + h2
-jdbcTemplate autowirowany + execute
-SQL czysty do tabelki
-insert czysty
-query na model
-Transactional
-JMS!
-spring-boot-activemq
-activemq-broker
-@JMSListener na innym pakiecie zupełnie
-spring-boot-starter-data-jpa
-CrudRepository
-Service
-Entity
-Transactional
-4. Add webjar bootstrap:
+48. Validation Request/Response 
+49. H2 Added
+50. NoSQL - presentation 
+
+LAST CLASSES:
+* Reminder what we did
+* BindingResult support in forms
+* Reflection
+* SpringSecurity - how to turn on
+* NoSQL - MongoDB Workshops
+* Cache + Cacheable
+* jdbcTemplate autowired + execute
+** pure insert
+** pure select
+* Transactional
+* Add WebJars
+50. Add webjar bootstrap:
 ```
 <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
 <dependency>
