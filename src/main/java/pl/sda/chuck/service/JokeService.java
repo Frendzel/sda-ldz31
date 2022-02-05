@@ -2,8 +2,6 @@ package pl.sda.chuck.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,6 +12,7 @@ import pl.sda.chuck.dao.JokeEntity;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.mapper.JokeMapper;
+import pl.sda.chuck.repository.JokesH2Repository;
 import pl.sda.chuck.repository.JokesRepository;
 
 import java.util.Optional;
@@ -21,7 +20,8 @@ import java.util.Optional;
 import static pl.sda.chuck.mapper.JokeManualMapper.map;
 
 @Service
-@Slf4j //Will generate code private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(JokeService.class)
+@Slf4j
+//Will generate code private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(JokeService.class)
 //TODO JokeService refactor -> 3 methods to one
 public class JokeService {
 
@@ -29,6 +29,9 @@ public class JokeService {
 
     @Autowired
     private JokesRepository repository;
+
+    @Autowired
+    private JokesH2Repository h2Repository;
 
     @CalculateInvocationTime
     public Optional<Joke> getRandomJoke() {
@@ -82,6 +85,7 @@ public class JokeService {
         //Mapping between DTO and DAO
         //Invoke save method on repository
         repository.save(map(joke));
+        h2Repository.save(map(joke));
     }
 
     @LogMe

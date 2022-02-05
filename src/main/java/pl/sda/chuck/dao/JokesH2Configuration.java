@@ -16,5 +16,6 @@ public class JokesH2Configuration {
         log.info("We're using h2 configuration");
     }
 
-    //TODO H2 SETUP
+    //TODO Support H2 connfiguration via profile
+
 }

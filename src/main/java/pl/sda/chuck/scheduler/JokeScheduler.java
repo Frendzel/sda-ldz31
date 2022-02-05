@@ -16,7 +16,7 @@ public class JokeScheduler {
     @Autowired
     JokeService jokeService;
 
-    //@Scheduled(cron = "${joke.get.interval}") Scheduler has been turned off
+    @Scheduled(cron = "${joke.get.interval}") //Scheduler has been turned off
     public void schedule() {
         //TODO add thread ID
         log.info("Scheduler invoked");
