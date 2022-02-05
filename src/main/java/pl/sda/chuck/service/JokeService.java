@@ -12,15 +12,14 @@ import pl.sda.chuck.aspect.LogMe;
 import pl.sda.chuck.dao.JokeEntity;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
-import pl.sda.chuck.mapper.JokeMapper;
 import pl.sda.chuck.repository.JokesH2Repository;
 import pl.sda.chuck.repository.JokesRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static pl.sda.chuck.mapper.JokeManualMapper.map;
+import static pl.sda.chuck.mapper.JokeMapper.INSTANCE;
 
 @Service
 @Slf4j
@@ -94,16 +93,16 @@ public class JokeService {
     @LogMe
     @CalculateInvocationTime
     public void saveAlternativeWay(Joke joke) {
-        JokeEntity jokeEntity = JokeMapper.INSTANCE.jokeToJokeEntity(joke);
+        JokeEntity jokeEntity = INSTANCE.jokeToJokeEntity(joke);
         repository.save(jokeEntity);
     }
 
     public Joke getJokeFromDb(Integer externalId) {
         JokeEntity byExternalId = h2Repository.findByExternalId(externalId);
-        return JokeMapper.INSTANCE.jokeEntityToJoke(byExternalId);
+        return INSTANCE.jokeEntityToJoke(byExternalId);
     }
 
-    public List<JokeEntity> findAllJokes(){
+    public List<JokeEntity> findAllJokes() {
         return IterableUtils.toList(h2Repository.findAll());
     }
 }
