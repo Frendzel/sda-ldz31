@@ -94,4 +94,9 @@ public class JokeService {
         JokeEntity jokeEntity = JokeMapper.INSTANCE.jokeToJokeEntity(joke);
         repository.save(jokeEntity);
     }
+
+    public Joke getJokeFromDb(Integer externalId) {
+        JokeEntity byExternalId = h2Repository.findByExternalId(externalId);
+        return JokeMapper.INSTANCE.jokeEntityToJoke(byExternalId);
+    }
 }
