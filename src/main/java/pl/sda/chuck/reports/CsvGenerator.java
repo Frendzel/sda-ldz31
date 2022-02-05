@@ -16,7 +16,7 @@ public class CsvGenerator implements Generator {
         //try-with-resources construction to close csvPrinter
         try (FileWriter fileWriter = new FileWriter("jokes.csv");
              CSVPrinter csvPrinter = new CSVPrinter(fileWriter, CSVFormat.DEFAULT)) {
-
+            //TODO
         } catch (IOException e) {
             log.error(e.getMessage());
         }

@@ -1,6 +1,7 @@
 package pl.sda.chuck.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.IterableUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,8 @@ import pl.sda.chuck.mapper.JokeMapper;
 import pl.sda.chuck.repository.JokesH2Repository;
 import pl.sda.chuck.repository.JokesRepository;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static pl.sda.chuck.mapper.JokeManualMapper.map;
@@ -98,5 +101,9 @@ public class JokeService {
     public Joke getJokeFromDb(Integer externalId) {
         JokeEntity byExternalId = h2Repository.findByExternalId(externalId);
         return JokeMapper.INSTANCE.jokeEntityToJoke(byExternalId);
+    }
+
+    public List<JokeEntity> findAllJokes(){
+        return IterableUtils.toList(h2Repository.findAll());
     }
 }
