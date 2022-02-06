@@ -88,22 +88,23 @@
     2. LogExecutionTimeAspect  ✔
     3. LogBefore some method  ✔
     4. Our own annotation  ✔ 
-43. Validation (@Valid)
-44. ConstraintViolation
-45. JMS Listener + Producer
-46. Thymeleaf + Form 
-47. Mapstruct
-    1. Add to project - do mapper
-48. Validation Request/Response 
-49. H2 Added
-50. NoSQL - presentation 
+43. Validation (@Valid)  ✔
+44. ConstraintViolation  ✔
+45. JMS Listener + Producer  ✔
+46. Thymeleaf + Form  ✔
+47. Mapstruct  ✔
+    1. Add to project - do mapper  ✔
+48. Validation Request/Response  ✔
+49. H2 Added  ✔
+50. NoSQL - presentation  ✔
 
 LAST CLASSES:
 * Reminder what we did (CSV Printer)
-* BindingResult support in forms
+* BindingResult support in forms  ✔
 * Reflection
 * SpringSecurity - how to turn on
 * NoSQL - MongoDB Workshops
+** Cloud setup  ✔
 * Cache + Cacheable
 * jdbcTemplate autowired + execute
 ** pure insert

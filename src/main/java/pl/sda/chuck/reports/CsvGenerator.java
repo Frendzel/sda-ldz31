@@ -9,13 +9,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+/*
+      .withHeader(HEADERS))) {
+        AUTHOR_BOOK_MAP.forEach((author, title) -> {
+            printer.printRecord(author, title);
+        });
+ */
 @Slf4j
 public class CsvGenerator implements Generator {
     @Override
     public void generate(List<JokeEntity> jokes) {
         //try-with-resources construction to close csvPrinter
         try (FileWriter fileWriter = new FileWriter("jokes.csv");
-             CSVPrinter csvPrinter = new CSVPrinter(fileWriter, CSVFormat.DEFAULT)) {
+             CSVPrinter csvPrinter = new CSVPrinter(fileWriter,
+                     CSVFormat.Builder.create().build())) {
             //TODO
         } catch (IOException e) {
             log.error(e.getMessage());

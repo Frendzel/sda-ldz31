@@ -15,11 +15,21 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ExternalTechnicalException.class)
     public ResponseEntity<ErrorResponse> propagateExternalTechnicalException(ExternalTechnicalException e) {
-        return new ResponseEntity<>(new ErrorResponse("Unknown joke"), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new ErrorResponse("Wrong Data"), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<ErrorResponse> propagateConstraintException(ConstraintViolationException e) {
+        return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> propagateIllegalArgumentException(ConstraintViolationException e) {
+        return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> propagateException(ConstraintViolationException e) {
         return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 
