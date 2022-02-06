@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class MongoConfiguration {
 
     @Value("${mongo.address}")
-    private String CLUSTER_ADDRESS;
+    private String address;
 
     @Value("${mongo.user}")
     private String user;
@@ -24,7 +24,7 @@ public class MongoConfiguration {
     @Bean
     public MongoClient mongoClient() {
         return MongoClients.create("mongodb+srv://" + user + ":" + password + "@" +
-                CLUSTER_ADDRESS + "?retryWrites=true&w=majority");
+                address + "?retryWrites=true&w=majority");
     }
 
 }
