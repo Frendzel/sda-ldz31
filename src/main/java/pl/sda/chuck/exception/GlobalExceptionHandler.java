@@ -29,9 +29,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> propagateException(ConstraintViolationException e) {
-        return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+    public ResponseEntity<ErrorResponse> propagateException() {
+        return new ResponseEntity<>(new ErrorResponse("UNKNOWN"), HttpStatus.BAD_REQUEST);
     }
-
-    //TODO add ExceptionHandler for Exception.class
 }

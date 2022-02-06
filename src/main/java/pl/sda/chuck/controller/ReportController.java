@@ -17,7 +17,8 @@ import pl.sda.chuck.service.JokeService;
 @Slf4j
 public class ReportController {
 
-    ReportFactory reportFactory = new ReportFactory();
+    @Autowired
+    ReportFactory reportFactory;
 
     @Autowired
     JokeService jokeService;

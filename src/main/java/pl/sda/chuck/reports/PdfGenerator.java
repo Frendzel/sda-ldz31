@@ -4,9 +4,14 @@ import pl.sda.chuck.dao.JokeEntity;
 
 import java.util.List;
 
-public class PdfGenerator implements Generator {
+public final class PdfGenerator extends BaseGenerator implements Generator {
+
+    public PdfGenerator(String path) {
+        this.path = path;
+    }
+
     @Override
     public void generate(List<JokeEntity> jokes) {
-
+        //TODO
     }
 }
