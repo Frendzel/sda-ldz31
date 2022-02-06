@@ -4,7 +4,7 @@
 ## Workshops 3 - 23.01.2022 - [Advanced]  ✔
 ## Workshops 4 - 29.01.2022 - [Advanced]  ✔
 ## Workshops 5 - 05.02.2022 - [Advanced]  ✔
-## Workshops 6 - 06.02.2022 - [Extra] ❌
+## Workshops 6 - 06.02.2022 - [Extra]  ✔
 
 # Modules
 
@@ -99,7 +99,7 @@
 50. NoSQL - presentation 
 
 LAST CLASSES:
-* Reminder what we did
+* Reminder what we did (CSV Printer)
 * BindingResult support in forms
 * Reflection
 * SpringSecurity - how to turn on

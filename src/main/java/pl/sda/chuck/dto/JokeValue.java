@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.List;
@@ -30,6 +31,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class JokeValue implements Serializable {
+    @Digits(integer = 1000, fraction = 0)
     Integer id;
     @NotBlank
     String joke;

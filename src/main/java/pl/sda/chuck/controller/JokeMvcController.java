@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.service.JokeService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -58,8 +59,15 @@ public class JokeMvcController {
 
     //TODO add bindingResult support
     @PostMapping("/joke/view/add")
-    public String saveJoke(@ModelAttribute Joke joke, final BindingResult bindingResult) {
+    public String saveJoke(@Valid @ModelAttribute Joke joke, final BindingResult bindingResult) {
         log.info("Joke to be saved: {}", joke);
+        if (bindingResult.hasErrors()) {
+            log.error("Form has below errors: ");
+            bindingResult
+                    .getAllErrors()
+                    .forEach(objectError -> log.warn(objectError.toString()));
+            return "joke-form";
+        }
         jokeService.save(joke);
         return "success";
     }

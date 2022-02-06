@@ -15,10 +15,12 @@
         <div class="form-group">
             <label>Id:</label>
             <input class="form-control" id="id" placeholder="Enter id" name="id" th:field="*{value.id}">
+            <p th:if="${#fields.hasErrors('value.id')}" th:errors="*{value.id}">Incorrect data for joke id</p>
         </div>
         <div class="form-group">
             <label>Joke:</label>
             <input class="form-control" id="joke" placeholder="Enter joke" name="joke" th:field="*{value.joke}">
+            <p th:if="${#fields.hasErrors('value.joke')}" th:errors="*{value.joke}">Incorrect data for joke</p>
         </div>
         <button type="submit" class="btn btn-default">Save</button>
     </form>
