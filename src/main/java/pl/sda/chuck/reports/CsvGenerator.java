@@ -12,14 +12,17 @@ import java.util.List;
 @Slf4j
 public final class CsvGenerator extends BaseGenerator implements Generator {
 
+    private static final String EXTENSION = ".csv";
+
     public CsvGenerator(String path) {
         this.path = path;
     }
 
     @Override
     public void generate(List<JokeEntity> jokes) {
+        log.info("Trying to save file on given path: {}", path);
         //try-with-resources construction to close csvPrinter
-        try (FileWriter fileWriter = new FileWriter(path);
+        try (FileWriter fileWriter = new FileWriter(path + EXTENSION);
              CSVPrinter csvPrinter = new CSVPrinter(
                      fileWriter,
                      CSVFormat.Builder.create()
