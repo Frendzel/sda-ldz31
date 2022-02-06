@@ -3,6 +3,9 @@ package pl.sda.chuck.dao;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -15,12 +18,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Document("jokes")
 public class JokeEntity {
     @Id
     @GeneratedValue
+    @MongoId
     Integer id;
-    Integer externalId;
+    @Field
     String joke;
+    @Field
+    Integer externalId;
     //TODO should be then moved to dedicated entity with many-to-many relationship
     @ElementCollection
     List<String> categories;

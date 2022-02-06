@@ -14,6 +14,7 @@ import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.repository.JokesH2Repository;
 import pl.sda.chuck.repository.JokesRepository;
+import pl.sda.chuck.repository.MongoDao;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,6 +35,9 @@ public class JokeService {
 
     @Autowired
     private JokesH2Repository h2Repository;
+
+    @Autowired
+    private MongoDao mongoDao;
 
     @CalculateInvocationTime
     public Optional<Joke> getRandomJoke() {
@@ -86,9 +90,12 @@ public class JokeService {
     public void save(Joke joke) {
         //Mapping between DTO and DAO
         //Invoke save method on repository
-        repository.save(map(joke));
+        JokeEntity entity = map(joke);
+        repository.save(entity);
         log.debug("Saving joke: {}", joke);
-        h2Repository.save(map(joke));
+        h2Repository.save(entity);
+        log.debug("Saving joke to MongoDB: {}", entity);
+        mongoDao.save(entity);
     }
 
     @LogMe
