@@ -4,7 +4,8 @@ import pl.sda.chuck.dao.JokeEntity;
 
 import java.util.List;
 
-public sealed interface Generator permits CsvGenerator, ExcelGenerator, PdfGenerator {
+//public sealed interface Generator permits CsvGenerator, ExcelGenerator, PdfGenerator {
+public interface Generator {
     String[] HEADERS = {"ID", "EXTERNAL_ID", "JOKE"};
 
     void generate(List<JokeEntity> jokes);
