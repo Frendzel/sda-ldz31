@@ -9,6 +9,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration //https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#reference
 public class MongoConfiguration {
 
+    @Value("${mongo.address}")
+    private String CLUSTER_ADDRESS;
+
+    @Value("${mongo.user}")
+    private String user;
+
     @Value("${mongo.password}")
     private String password;
 
@@ -17,7 +23,8 @@ public class MongoConfiguration {
      */
     @Bean
     public MongoClient mongoClient() {
-        return MongoClients.create("mongodb+srv://user:" + password + "@cluster0.xlisg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+        return MongoClients.create("mongodb+srv://" + user + ":" + password + "@" +
+                CLUSTER_ADDRESS + "?retryWrites=true&w=majority");
     }
 
 }
