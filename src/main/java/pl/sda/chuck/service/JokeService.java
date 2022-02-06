@@ -87,6 +87,7 @@ public class JokeService {
         //Mapping between DTO and DAO
         //Invoke save method on repository
         repository.save(map(joke));
+        log.debug("Saving joke: {}", joke);
         h2Repository.save(map(joke));
     }
 

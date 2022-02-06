@@ -19,12 +19,12 @@ public class LogMeAspect {
 
     @PostConstruct
     public void log() {
-        log.info("Aspect properly invoked.");
+        log.trace("Aspect properly invoked.");
     }
 
     @Before("@annotation(pl.sda.chuck.aspect.LogMe)")
     public void logMeBefore() {
-        log.info("Before invocation: "
+        log.trace("Before invocation: "
                 + getClass().getSimpleName()
                 + " by thread: "
                 + Thread.currentThread());
@@ -32,7 +32,7 @@ public class LogMeAspect {
 
     @After("@annotation(pl.sda.chuck.aspect.LogMe)")
     public void logMeAfter() {
-        log.info("After invocation: "
+        log.trace("After invocation: "
                 + getClass().getSimpleName()
                 + " by thread: "
                 + Thread.currentThread());

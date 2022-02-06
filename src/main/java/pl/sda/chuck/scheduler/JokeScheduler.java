@@ -19,10 +19,10 @@ public class JokeScheduler {
     @Scheduled(cron = "${joke.get.interval}") //Scheduler has been turned off
     public void schedule() {
         //TODO add thread ID
-        log.info("Scheduler invoked");
+        log.trace("Scheduler invoked");
         Optional<Joke> randomJoke = jokeService.getRandomJoke();
         randomJoke.ifPresent(joke -> jokeService.save(joke));
-        log.info("Scheduler finished");
+        log.trace("Scheduler finished");
     }
 
 }

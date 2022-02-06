@@ -16,8 +16,9 @@ public class JokesMockedRepository implements JokesRepository {
     }
 
     public void save(JokeEntity joke) {
-        log.debug("Before saving joke: {}", joke); //The same as log.debug("Before saving joke: " + joke);
+        log.trace("Before saving joke: {}", joke); //The same as log.debug("Before saving joke: " + joke);
         jokesMockedDb.getJokes().add(joke);
-        log.debug("After saving joke: {}", joke);
+        log.trace(
+                "After saving joke: {}", joke);
     }
 }

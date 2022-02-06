@@ -15,7 +15,7 @@ public class CalculateInvocationTimeAspect {
 
     @PostConstruct
     public void log() {
-        log.info("Aspect properly invoked.");
+        log.trace("Aspect properly invoked.");
     }
 
     @Around("@annotation(pl.sda.chuck.aspect.CalculateInvocationTime)")
@@ -23,7 +23,7 @@ public class CalculateInvocationTimeAspect {
         long start = System.currentTimeMillis();
         Object result = proceedingJoinPoint.proceed(); //method invocation
         long stop = System.currentTimeMillis();
-        log.info("Method invocation time: {}", stop - start);
+        log.debug("Method invocation time: {}", stop - start);
         return result;
     }
 }
