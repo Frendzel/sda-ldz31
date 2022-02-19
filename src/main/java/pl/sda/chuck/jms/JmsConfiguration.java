@@ -22,7 +22,7 @@
 //    }
 //
 //    @Bean
-//    public JmsTemplate jmsTemplate(){
+//    public JmsTemplate customJmsTemplate(){
 //        JmsTemplate template = new JmsTemplate();
 //        template.setConnectionFactory(connectionFactory());
 //        template.setDefaultDestinationName("messageBox");

@@ -33,10 +33,10 @@ public class JokeService {
     @Autowired
     private JokesRepository repository;
 
-    @Autowired
+    @Autowired(required = false)
     private JokesH2Repository h2Repository;
 
-    @Autowired
+    @Autowired(required = false)
     private MongoDao mongoDao;
 
     @CalculateInvocationTime

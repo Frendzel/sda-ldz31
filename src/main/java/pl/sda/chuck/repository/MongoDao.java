@@ -13,10 +13,17 @@ public class MongoDao {
     @Autowired
     MongoTemplate mongoTemplate;
 
+
+    /**
+     * Please take a look on:
+     *     https://github.com/Frendzel/sda-nosql/blob/sda16/mongodb-connector/src/test/java/com/sda/GradesServiceTest.java
+     */
     public void save(JokeEntity entity) {
         log.info("DB Name: " + mongoTemplate.getDb().getName());
         mongoTemplate.save(entity);
     }
+
+
 
 
 }

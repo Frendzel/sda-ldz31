@@ -5,16 +5,19 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import pl.sda.chuck.dto.CountResponse;
 import pl.sda.chuck.dto.Joke;
 import pl.sda.chuck.exception.ExternalTechnicalException;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
+@ActiveProfiles("mocked-db")
 class JokeServiceTest {
 
     public static final int SUT = 200;

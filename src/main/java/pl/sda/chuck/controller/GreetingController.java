@@ -35,7 +35,7 @@ public class GreetingController {
     @GetMapping(path = "/hello/json", produces = APPLICATION_JSON_VALUE)
     public @ResponseBody
     Greeting helloJson() {
-        return new Greeting("HELLO");
+        return new Greeting("world");
     }
 
     @Async // Async annotation to get response immediately. In background an old thread is continuing calculations

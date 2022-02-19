@@ -5,11 +5,13 @@ import com.mongodb.client.MongoClients;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration //https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#reference
 @EnableMongoRepositories
+@Profile("mongo")
 public class MongoConfiguration {
 
     @Value("${mongo.address}")
