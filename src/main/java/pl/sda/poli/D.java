@@ -3,7 +3,7 @@ package pl.sda.poli;
 import org.springframework.stereotype.Component;
 
 @Component
-public class D extends B{
+public class D extends B {
     String status;
 
     public D() {

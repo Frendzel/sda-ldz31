@@ -33,6 +33,7 @@ class GreetingMockMvcControllerTest {
                 .getContentAsString();
         //then
         assertEquals("world", response);
+
     }
 
     @Test
